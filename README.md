@@ -14,3 +14,7 @@
 # Tugas-2-Pertemuan-3
 ## Tampilan Video Perpindahan Aplikasi
 [Tugas 2 Pertemuan 3.webm](https://github.com/user-attachments/assets/160249a6-879f-49c4-99a3-3689619db105)
+
+# Tugas-3-Pertemuan-4
+## Tampilan Data yang Didapat
+[Tugas 3 Pertemuan 4.webm](https://github.com/user-attachments/assets/3b804368-b3b8-4c56-bd1b-ab36e69e542e)
