@@ -10,20 +10,13 @@ import androidx.core.view.WindowInsetsCompat
 import com.unsoed.informatikamobile.databinding.ActivityHalaman2Binding
 
 class Halaman2Activity : AppCompatActivity() {
-
     private lateinit var binding: ActivityHalaman2Binding
-
     private val latitude = "-7.429427"
-
     private val longitude = "109.338082"
-
     private val gMapsUrl = "http://maps.google.com/maps?q=loc:"
-
     private val packageMaps = "com.google.android.apps.maps"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityHalaman2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -51,6 +44,11 @@ class Halaman2Activity : AppCompatActivity() {
             it.imgIcon.setImageResource(R.drawable.ic_phone)
             it.tvLayout.setText(R.string.telepon)
         }
+
+        binding.layoutBuku.let {
+            it.imgIcon.setImageResource(R.drawable.ic_book)
+            it.tvLayout.setText(R.string.book)
+        }
     }
 
     private fun initListener() {
@@ -59,25 +57,32 @@ class Halaman2Activity : AppCompatActivity() {
             val mapIntent = Intent(Intent.ACTION_VIEW, gMapsIntentUri)
             startActivity(mapIntent.setPackage(packageMaps))
         }
+
         binding.layoutIg.root.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = getString(R . string . ig_himpunan).toUri()
+            intent.data = getString(R.string.ig_himpunan).toUri()
             startActivity(intent)
         }
+
         binding.layoutEmail.root.setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
-            data = "mailto:${getString(R . string . email)}".toUri()
-        }
+                data = "mailto:${getString(R.string.email)}".toUri()
+            }
             startActivity(intent)
         }
+
         binding.layoutPhone.root.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL).apply {
                 data = "tel:${getString(R.string.telepon)}".toUri()
             }
             startActivity(intent)
         }
+
+        binding.layoutBuku.root.setOnClickListener {
+            startActivity(Intent(this, DaftarBukuActivity::class.java))
+        }
         binding.btnBack.setOnClickListener {
-        finish()
+            finish()
         }
     }
 }
